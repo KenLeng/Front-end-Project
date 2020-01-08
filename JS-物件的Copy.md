@@ -1,6 +1,6 @@
 # JS的深拷貝(Shallow copy)與淺拷貝(Deep copy)
 * <b>物件</b>跟<b>基本型別</b>最大的不同就在於他們的傳值方式。  
-  基本型別： Ex. int、String、boolean
+  ### 基本型別： Ex. int、String、boolean
   ```javascript
   let a = 1;
   let b = a;
@@ -8,7 +8,7 @@
   console.log(a);  //1
   console.log(b);  //5
   ```
-  物件：  
+  ### 物件：  
   淺拷貝
   ```javascript
   let ori_obj = { a: 1, b: 3, c: 5};

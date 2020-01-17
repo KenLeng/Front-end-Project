@@ -76,3 +76,21 @@
    varMing();
    letMing();
    ```
+## [DOM事件](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)：捕獲(event capturing)與冒泡(event bubbling)
+   ### 原則-  
+   1.先捕獲，在冒泡。  
+   2.當事件傳到 target 本身，沒有分捕獲跟冒泡。  
+   ### 概念-  
+   DOM樹在傳遞時，會先從根節點(window)往下傳到target，這邊加上事件的話，就會處於`CAPTURING_PHASE(捕獲階段)`。  
+   target就是你所點擊的那個`目標`。  
+   最後，事件再往上從子節點一路逆向傳回去根節點，這時候就叫做`BUBBLING_PHASE(冒泡階段)`。  
+   事件傳遞圖→
+   <img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg" width="400" height="400"></img>
+   * `stopPropagation()`與`preventDefault()`  
+   ```txt
+   stopPropagation - 中斷事件。  
+     加在哪邊，事件的傳遞就斷在哪裡，不會繼續往下傳遞，但若是你在同一個節點上不只有一個 listener，還是會被執行到。  
+     因為事件傳遞被停止，所以剩下的 listener 都不會再收到任何事件。
+   preventDefault - 取消瀏覽器的預設行為。  
+     preventDefault 跟 JavaScript 的事件傳遞「一點關係都沒有」，加上這一行之後，preventDefault事件還是會繼續往下傳遞。
+   ```

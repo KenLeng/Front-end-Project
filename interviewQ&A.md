@@ -9,7 +9,7 @@
    null === undefined // false
    ```
 ## Describe 'this' works in JavaScript
-   * 影響<b> this </b>是函式的呼叫，並非宣告的時機
+   * 影響<b> this </b>是函式的呼叫，並非宣告的時機。箭頭函式並沒有 this
    ```javascript
    function callName() {
       console.log(this.name);
@@ -94,3 +94,14 @@
    preventDefault - 取消瀏覽器的預設行為。  
      preventDefault 跟 JavaScript 的事件傳遞「一點關係都沒有」，加上這一行之後，preventDefault事件還是會繼續往下傳遞。
    ```
+## Vue Lifecycle
+   <img src="https://miro.medium.com/max/1200/1*byyX8EW6mIhRsCBWwByNYg.png" width="350" height="800"></img>
+   
+   `beforeCreated` 什麼事都還沒做，只跟大家說我要開始囉。  
+   `created` 所有屬性都已經綁定囉，但是$el還沒建立，DOM也還沒生成。在此階段，包含data observation，computed屬性，methods，watch/event callbacks等項目都已設定完成。  
+   `beforeMounted` 要開始產virtual DOM。  
+   `mounted` el被新建的vm.$el替換，並掛到instance後調用的hook。  
+   `beforeUpdate` data收到更新異動，在更新前調用它。  
+   `updated` DOM已經完成更新，盡量在此階段不要更動狀態，如果有要做狀態相對應的改變，應該用computed和watch取代。  
+   `beforeDestroy` Vue instance被銷毀前調用，這時候大家功能都還能使用。  
+   `destroy` Vue instance 所有的東西都會解除綁定，event listener也會被移除。最好使用v-if & v-for以data控制component的生命週期

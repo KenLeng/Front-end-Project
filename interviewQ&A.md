@@ -1,7 +1,12 @@
 ## <a name='toc'>目錄</a>
-  1. [== 與 === 的差異](#general-questions)
+  1. [== 與 === 的差異](#a)
+  1. [Describe 'this' works in JavaScript](#b)
+  1. [.call、.apply、.bind](#c)
+  1. [var、let、const](#d)
+  1. [捕獲與冒泡](#e)
+  1. [Vue Lifecycle](#f)
 
-## <a name='general-questions'>== 與 === 的差異</a>
+## <a name='a'>== 與 === 的差異</a>
    * == 為一般相等→會先將比較值轉換成同一型別，再使用嚴格相等。
    * === 為嚴格相等→型別相等且值相等，效率比使用一般相等好。  
    <b>Notes</b>：  
@@ -11,7 +16,7 @@
    null == undefined  // true  
    null === undefined // false
    ```
-## Describe 'this' works in JavaScript
+## <a name='b'>Describe 'this' works in JavaScript</a>
    * 影響<b> this </b>是函式的呼叫，並非宣告的時機。箭頭函式並沒有 this
    ```javascript
    function callName() {
@@ -52,11 +57,11 @@
                         //全域:Kobe bryant
                         //區域:Allen iverson
    ```
-## `.call`、`.apply`、`.bind`
+## <a name='c'>`.call`、`.apply`、`.bind`</a>
    * .call 等同於 `()`，使用方法`fn.call(this, arg1, arg2..., argn)`，第二個以後的參數會作為參數傳進目標函式中。
    * .apply 與.call功能一樣，使用方法`fn.apply(this, [arg1, arg2..., argn])`，只會傳入兩個參數，第二個參數必須為<b>陣列</b>。
    * .bind 可以把先前傳入 bind 的參數一並帶進目標函式中，使用方法`fn.bind(this, arg1, arg2..., argn)`，第二個以後的參數會作為往後傳進目標函式的參數。
-## `var`、`let`、`const`
+## <a name='d'>`var`、`let`、`const`</a>
    * var變數範圍在function內；而let是在block<b>(block意指｛｝)</b>，除了 function 以外 if、for 的 {} 都屬於 let 的作用範圍。
    ```javascript
    function varMing () {
@@ -79,7 +84,7 @@
    varMing();
    letMing();
    ```
-## [DOM事件](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)：捕獲(event capturing)與冒泡(event bubbling)
+## <a name='e'>[DOM事件](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)：捕獲(event capturing)與冒泡(event bubbling)</a>
    ### 原則-  
    1.先捕獲，在冒泡。  
    2.當事件傳到 target 本身，沒有分捕獲跟冒泡。  
@@ -97,7 +102,7 @@
    preventDefault - 取消瀏覽器的預設行為。  
      preventDefault 跟 JavaScript 的事件傳遞「一點關係都沒有」，加上這一行之後，preventDefault事件還是會繼續往下傳遞。
    ```
-## Vue Lifecycle
+## <a name='f'>Vue Lifecycle</a>
    <img src="https://miro.medium.com/max/1200/1*byyX8EW6mIhRsCBWwByNYg.png" width="350" height="800"></img>
    
    `beforeCreated` 什麼事都還沒做，只跟大家說我要開始囉。  

@@ -5,6 +5,7 @@
   1. [var、let、const](#d)
   1. [捕獲與冒泡](#e)
   1. [Vue Lifecycle](#f)
+  1. [null、undefined、undeclared](#g)
 
 ## <a name='a'>== 與 === 的差異</a>
    * == 為一般相等→會先將比較值轉換成同一型別，再使用嚴格相等。
@@ -113,3 +114,7 @@
    `updated` DOM已經完成更新，盡量在此階段不要更動狀態，如果有要做狀態相對應的改變，應該用computed和watch取代。  
    `beforeDestroy` Vue instance被銷毀前調用，這時候大家功能都還能使用。  
    `destroy` Vue instance 所有的東西都會解除綁定，event listener也會被移除。最好使用v-if & v-for以data控制component的生命週期
+## <a name='g'>`null`、`undefined`、`undeclared`</a>
+  * `undeclared` variables don’t even exist - 未宣告
+  * `undefined` variables exist, but don’t have anything assigned to them - 有宣告但未給值
+  * `null` variables exist and have null assigned to them - 有宣告卻給null

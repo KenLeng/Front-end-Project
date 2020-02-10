@@ -6,6 +6,7 @@
   1. [捕獲與冒泡](#e)
   1. [Vue Lifecycle](#f)
   1. [null、undefined、undeclared](#g)
+  1. [Cookie、Session、SessionStorage、LocalStorage](#h)
 
 ## <a name='a'>== 與 === 的差異</a>
    * == 為一般相等→會先將比較值轉換成同一型別，再使用嚴格相等。
@@ -118,3 +119,9 @@
   * `undeclared` variables don’t even exist - 未宣告
   * `undefined` variables exist, but don’t have anything assigned to them - 有宣告但未給值
   * `null` variables exist and have null assigned to them - 有宣告卻給null
+## <a name='h'>`Cookie`、`Session`、`SessionStorage`、`LocalStorage`</a>
+  |特性|Cookie|Session|SessionStorage|LocalStorage|
+  |----|------|-------|--------------|-----------|
+  |數據有效期|一般由服務器(server)生成，可設置失效時間。如果在瀏覽器生成，默認是關閉瀏覽器後失效|僅在當前瀏覽器(含新視窗、分頁)關閉前有效|僅在當前瀏覽器窗口關閉前有效|除非被清除，否則永久保存|
+  |存放數據大小|4K左右|與cookie共用|5MB|5MB|
+  |與server通信|存放於client端，在所有同源瀏覽器窗口中都是共享的，每次都會攜帶在HTTP表頭中|本身就存放在server端|僅在瀏覽器(client)中保存，不參與服務器通信|僅在瀏覽器(client)中保存，不參與服務器通信|

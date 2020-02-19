@@ -7,6 +7,7 @@
   1. [Vue Lifecycle](#f)
   1. [null、undefined、undeclared](#g)
   1. [Cookie、Session、SessionStorage、LocalStorage](#h)
+  1. [CSR、SSR、SPA](#i)
 
 ## <a name='a'>== 與 === 的差異</a>
    * == 為一般相等→會先將比較值轉換成同一型別，再使用嚴格相等。
@@ -125,3 +126,8 @@
   |數據有效期|一般由服務器(server)生成，可設置失效時間。如果在瀏覽器生成，默認是關閉瀏覽器後失效|僅在當前瀏覽器(含新視窗、分頁)關閉前有效|僅在當前瀏覽器窗口關閉前有效|除非被清除，否則永久保存|
   |存放數據大小|4K左右|與cookie共用|5MB|5MB|
   |與server通信|存放於client端，在所有同源瀏覽器窗口中都是共享的，每次都會攜帶在HTTP表頭中|本身就存放在server端|僅在瀏覽器(client)中保存，不參與服務器通信|僅在瀏覽器(client)中保存，不參與服務器通信|
+## <a name='i'>[CSR、SSR、SPA](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)</a>
+   CSR(client side render) - 畫面在前端渲染，瀏覽器傳送頁面請求，server返回的是一個模板頁面  
+   SSR(server side render) - 畫面在後端渲染，渲染完後即回傳給瀏覽器  
+   SPA(single page application) - 頁面不轉換，由前端內部透過router和ajax去後端撈資料，client在重新渲染  
+  * CSR與SSR的差異就在於，有了資料後，畫面在哪邊渲染。

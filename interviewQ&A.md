@@ -9,6 +9,7 @@
   1. [null、undefined、undeclared](#h)
   1. [Cookie、Session、SessionStorage、LocalStorage](#i)
   1. [CSR、SSR、SPA](#j)
+  1. [事件委派](#k)
 
 ## <a name='a'>callback、promise</a>
    * callback意指「回調」，用另一個函式作為函式中的傳入參數的樣式來撰寫程式，然後將本來應該要回傳的值(不限定只有一個)，傳給下一個延續函式，繼續下個函式的執行
@@ -148,3 +149,15 @@
    SSR(server side render) - 畫面在後端渲染，渲染完後即回傳給瀏覽器  
    SPA(single page application) - 頁面不轉換，由前端內部透過router和ajax去後端撈資料，client在重新渲染  
   * CSR與SSR的差異就在於，有了資料後，畫面在哪邊渲染。
+## <a name='k'>事件委派</a>
+  * 是一種受惠於 Event Bubbling 而能減少監聽器數目的方法。
+  * 優點 - 可減少監聽器的數目。
+  * 缺點 - 由於需要判斷哪些 child node 是我們有興趣的項目，而必須多寫一些程式碼做判斷。
+  ```javascript
+  <div class="parent" onclick="clickEvent">
+    <div class="child" data-name="a"></div>
+    <div class="child" data-name="b"></div>
+    <div class="child" data-name="c"></div>
+    <div class="subitem" data-name="d"></div>
+  </div>
+  ```

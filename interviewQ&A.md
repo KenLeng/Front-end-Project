@@ -10,6 +10,8 @@
   1. [Cookie、Session、SessionStorage、LocalStorage](#i)
   1. [CSR、SSR、SPA](#j)
   1. [事件委派](#k)
+  1. [IIFE-立即函示](#l)
+  1. [ES5、ES6](#m)
 
 ## <a name='a'>callback、promise</a>
    * callback意指「回調」，用另一個函式作為函式中的傳入參數的樣式來撰寫程式，然後將本來應該要回傳的值(不限定只有一個)，傳給下一個延續函式，繼續下個函式的執行
@@ -150,7 +152,7 @@
    SPA(single page application) - 頁面不轉換，由前端內部透過router和ajax去後端撈資料，client在重新渲染  
   * CSR與SSR的差異就在於，有了資料後，畫面在哪邊渲染。
 ## <a name='k'>事件委派</a>
-  * 是一種受惠於 Event Bubbling 而能減少監聽器數目的方法。
+  * 是一種受惠於 Event Bubbling(冒泡事件) 而能減少監聽器數目的方法。
   * 優點 - 可減少監聽器的數目。
   * 缺點 - 由於需要判斷哪些 child node 是我們有興趣的項目，而必須多寫一些程式碼做判斷。
   ```javascript
@@ -161,3 +163,68 @@
     <div class="subitem" data-name="d"></div>
   </div>
   ```
+## <a name='l'>`IIFE`</a>
+  * 透過 function expression 的方式來建立函式，並且立即執行它。
+  * 須加上一個執行的指令，也就是括號 `()`。
+  * 在 IIFEs 內所定義的變數並不會跑出去這個函式之外而干擾到程式其他的部分`。
+  ```javascript
+  // 函式陳述
+  functionn sayIIFE(name) {
+    console.log('Hello '+ name)
+  }
+  sayIIFE('ken')  // Hello ken
+  
+  // 函式表達
+  let say = function(name) {
+    console.log('Hello '+ name)
+  }
+  say('ken') // Hello ken
+  
+  //IIFE
+  let say = function(name){
+    console.log('Hello '+ name)
+  }('ken')  // Hello ken
+  
+  let say = function(name) {
+    return('Hello '+ name)
+  }
+  console.log(say)  // f (name) { return('Hello '+ name) }
+  console.log(say('ken'))  // Hello ken
+  
+  (function(name){
+    console.log('Hello '+ name)
+  })('ken')    // Hello ken
+  ```
+## <a name='m'>`ES5、ES6`</a>
+  * ESx為javascript的版本  
+  `ES5` - 
+    * 'use strict' - 嚴謹模式，目的是為了讓編寫「具穩定性的 JavaScript 更容易」，在不穩定的語法或妨礙最佳化的語意都會跳出警告，讓開發者避開這些寫法。
+    在傳統的瀏覽器下僅會被視為沒有用處的字串，所以不會對舊有的瀏覽器產生影響。
+      * 直接加入在程式碼的前方就可以開始運作，特別值得注意的是它也可以單獨使用在 function 下，如果使用在函式的開頭，那將只會在此函式套用「嚴謹模式」，函式的外部將不受影響。
+    * Array/Object操作方式 - Array.forEach、Array.map、Array.filter、Array.reduce、JSON.stringify、JSON.parse、Object.keys。  
+  `ES6` - 
+    * `let`和`const`
+    * Template Literals - 不再用 + 來進行字串與變數的結合
+    ```javascript
+    const name = 'ken'
+    const str = `Hello ${name}！`
+    ```
+    * Destructuring Assignment - 用更簡短的方式宣告陣列或物件的元素的值，不過物件比較麻煩一點，必須要讓變數名稱取名跟 key 一樣的名稱，陣列則不用。
+    ```javascript
+    const obj = {d: 1, e: 2, f: 3}
+    const {d, e, f} = obj
+    console.log(d, e, f)  // 1 2 3
+    
+    const arr = [1,2,3]
+    const [a, b ,c] = arr
+    console.log(a, b, c) // 1 2 3
+    ```
+    * Object Literals - 假如 JSON 內的元素其 key 與 value 名稱一樣，可以省略 key 直接寫 value 名稱即可。
+    ```javascript
+    const name = 'Andy'
+    const obj = { name }  // { name: 'Andy'}
+    ```
+    * 箭頭函式
+    * Classes - 用於建立物件以及物件繼承上，在使用上必須先 new 一個物件出來才可使用。
+    * Promise物件
+ 

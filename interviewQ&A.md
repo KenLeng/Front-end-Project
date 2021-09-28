@@ -12,7 +12,8 @@
   1. [事件委派](#k)
   1. [IIFE-立即函示](#l)
   1. [ES5、ES6](#m)
-  1. [補充知識](#n)
+  1. [CSS：float](#n)
+  1. [補充知識](#o)
 
 ## <a name='a'>callback、promise</a>
    * callback意指「回調」，用另一個函式作為函式中的傳入參數的樣式來撰寫程式，然後將本來應該要回傳的值(不限定只有一個)，傳給下一個延續函式，繼續下個函式的執行
@@ -228,6 +229,9 @@
     * 箭頭函式
     * Classes - 用於建立物件以及物件繼承上，在使用上必須先 new 一個物件出來才可使用。
     * Promise物件
- ## <a name='n'>補充知識</a>
+    
+ ## <a name='n'>Float</a>
+   * 使用後，有些inline等的屬性會被修改 display計算值(block)。[請參考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float)
+ ## <a name='o'>補充知識</a>
    - [Clean code](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/clean-code-index-51e209cc47db)
    - [簡單演算法](https://openhome.cc/Gossip/AlgorithmGossip/)

@@ -23,6 +23,7 @@
    3. 打包體積變小
    4. setup()代替beforeCreated和created()
    5. 取消$on、$off
+   6. 多了provide/inject 屬性，跨組件讀寫資料
    * `ref`將變數做雙向綁定
    * `toRef`把不是響應式的物件作響應
    * `toRefs`把響應式的reactive物件，分解成無數個ref雙向綁定

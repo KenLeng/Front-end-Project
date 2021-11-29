@@ -1,4 +1,5 @@
 ## <a name='toc'>目錄</a>
+  1. [Vue3](#1)
   1. [callback、promise](#a)
   1. [== 與 === 的差異](#b)
   1. [Describe 'this' works in JavaScript](#c)
@@ -14,6 +15,17 @@
   1. [ES5、ES6](#m)
   1. [CSS：float](#n)
   1. [補充知識](#o)
+
+## <a name='1'>Vue3</a>
+   ### 差異
+   1. 物件的監聽取消Object.defineProperty，改為new Proxy()，因此新增屬性時能重新渲染
+   2. TypeScript支援
+   3. 打包體積變小
+   4. setup()代替beforeCreated和created()
+   5. 取消$on、$off
+   * `ref`將變數做雙向綁定
+   * `toRef`把不是響應式的物件作響應
+   * `toRefs`把響應式的reactive物件，分解成無數個ref雙向綁定
 
 ## <a name='a'>callback、promise</a>
    * callback意指「回調」，用另一個函式作為函式中的傳入參數的樣式來撰寫程式，然後將本來應該要回傳的值(不限定只有一個)，傳給下一個延續函式，繼續下個函式的執行

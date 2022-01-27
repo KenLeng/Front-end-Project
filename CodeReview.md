@@ -1,4 +1,4 @@
-## What to look for in code review
+## [What to look for in code review](https://google.github.io/eng-practices/review/reviewer/)
 #### 設計
 - 此次更動了什麼程式
 #### 功能性
@@ -11,7 +11,7 @@
 #### 測試 
 - 測試程式的必要性
 #### 命名
-- 變數或函式名稱是否有用
+- 變數或函式名稱是否合理且足以表達、不含糊
 #### 註釋
 - 解釋why而不是what
 - 若需解釋what，就回到`複雜性`的review
@@ -27,3 +27,7 @@
 1. 先大致瀏覽整個 CL
 2. 檢視這個 CL 最重要的部份
 3. 依照適當的順序看其餘的部份
+
+## how to write code review comments
+- 說明原因
+- 提供指引

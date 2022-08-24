@@ -1,4 +1,8 @@
 # JS的深拷貝(Shallow copy)與淺拷貝(Deep copy)
+
+[call by value、call by reference 參考1](https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/)  
+[call by value、call by reference 參考2](https://medium.com/@mengchiang000/js%E5%9F%BA%E6%9C%AC%E8%A7%80%E5%BF%B5-call-by-value-%E9%82%84%E6%98%AFreference-%E5%8F%88%E6%88%96%E6%98%AF-sharing-22a87ca478fc)
+
 * <b>物件</b>跟<b>基本型別</b>最大的不同就在於他們的傳值方式。  
   ### 基本型別： Ex. int、String、boolean
   ```javascript
@@ -40,3 +44,5 @@
    * jquery的用法
 3. lodash.cloneDeep({ 被複製的物件 })
    * 函式庫lodash，require('lodash')
+
+[相關知識](https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/)
